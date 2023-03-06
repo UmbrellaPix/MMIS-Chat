@@ -5,20 +5,20 @@
 npm install
 ```
 
+## Установить библиотеку
+```
+npm install vue-router
+```
+
+## Заменить в src/server.js переменную server на локальный ip адрес вашего C# сервера
+```
+2:> export const server = "http://ЛОКАЛЬНЫЙ IP АДРЕС С# СЕРВЕРА/";
+```
 ### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Подробнее по установке сервера смотрите на YouTube:
+Позже...
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
