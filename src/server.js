@@ -1,5 +1,8 @@
+const ip = "192.168.0.10";
+const port = "2800";
+
 export const method = "POST";
-export const server = "http://192.168.0.10:2800/";
+export const server = `http://${ip}:${port}/`;
 
 // Парсинг ключей и значений заголовков из строки в лист
 export function headerHandler(headers) {

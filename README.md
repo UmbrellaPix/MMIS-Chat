@@ -10,10 +10,8 @@ npm install
 npm install vue-router
 ```
 
-## Заменить в src/server.js переменную server на локальный ip адрес вашего C# сервера
-```
-2:> export const server = "http://ЛОКАЛЬНЫЙ IP АДРЕС С# СЕРВЕРА/";
-```
+## Заменить в src/server.js переменную serverIp и serverPort на значения которые указаны на C# сервере
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
