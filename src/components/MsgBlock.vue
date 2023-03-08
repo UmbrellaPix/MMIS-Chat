@@ -2,14 +2,14 @@
     <div class="reversed" v-if="member_id === String(message.member.id)">
         <img src="../assets/user.png">
         <div class="msg-content">
-            <div class="msg-content-author">{{ message.member.firstName }}</div>
+            <div class="msg-content-author">{{ convertFromBase64(message.member.firstName) }}</div>
             <div class="msg-content-text">{{ convertFromBase64(message.content) }}</div>
         </div>
     </div>
     <div class="msg-block" v-else>
         <img src="../assets/user.png">
         <div class="msg-content">
-            <div class="msg-content-author">{{ message.member.firstName }}</div>
+            <div class="msg-content-author">{{ convertFromBase64(message.member.firstName) }}</div>
             <div class="msg-content-text">{{ convertFromBase64(message.content) }}</div>
         </div>
     </div>
