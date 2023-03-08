@@ -68,8 +68,8 @@ export default {
 	auth_member: (url)=> {
 		if (validationRegForm(url.url)){
 			let headers = {
-				login:document.getElementById('login').value,
-				password:document.getElementById('password').value
+				login:btoa(unescape(encodeURIComponent(document.getElementById('login').value))),
+				password:btoa(unescape(encodeURIComponent(document.getElementById('password').value)))
 			}
 			
 			//Формирование и отправка запросов в зависимости от формы reg/auth
@@ -88,8 +88,8 @@ export default {
 					break;
 
 				case "registration/":
-					headers.firstName = document.getElementById('firstName').value;
-					headers.lastName = document.getElementById('lastName').value;
+					headers.firstName = btoa(unescape(encodeURIComponent(document.getElementById('firstName').value)));
+					headers.lastName = btoa(unescape(encodeURIComponent(document.getElementById('lastName').value)));
 					headers.age = document.getElementById('age').value;
 					sendRequest(method, server + url.url, headers)
 						.then(() => {alert("Аккаунт успешно создан!")})
