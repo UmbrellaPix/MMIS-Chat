@@ -43,9 +43,12 @@ export default {
                     uuid: localStorage.getItem("uuid")
                 };
                 sendRequest(method, server + url, headers);
-
-                var objDiv = document.getElementById("messages-list");
-                objDiv.scrollTop = objDiv.scrollHeight;
+                
+                //Задержка нужна для того что бы запрос успел прийти и обработаться
+                setTimeout(()=>{
+                    var objDiv = document.getElementById("messages-list");
+                    objDiv.scrollTop = objDiv.scrollHeight;
+                }, 1500);
 
                 message.value = null;
             }
