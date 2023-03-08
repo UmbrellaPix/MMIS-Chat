@@ -10,7 +10,7 @@ npm install
 npm install vue-router
 ```
 
-## Заменить в src/server.js переменную serverIp и serverPort на значения которые указаны на C# сервере
+## Заменить в src/server.js переменную ip и port на значения которые указаны на C# сервере
 
 ### Compiles and hot-reloads for development
 ```
