@@ -56,27 +56,28 @@ export default {
     },
     beforeMount() {
         //Проверка на авторизацию (!Без проверки на истекшую сессию если uuid ключ присутствует, дописать)
-        if (localStorage.getItem("uuid") != null){
-            const headers = {
-            uuid: localStorage.getItem("uuid"),
-        };
-        const url = "read/"
-        
-        //цикличный запрос на получение 15 последних сообщений
-        setInterval(()=>{sendRequest(method, server + url, headers).then(
-            data => {
-                let headerMap = headerHandler(data);
-                let valueStringHeaderMessages = JSON.parse(headerMap['messages']);
-                this.messages = valueStringHeaderMessages["messages"];
-                console.log(this.messages);
-            })}, 1500);
+        if (localStorage.getItem("uuid") != null)
+        {
+            const headers = {uuid: localStorage.getItem("uuid"),}
+            const url = "read/"
+            
+            //цикличный запрос на получение 15 последних сообщений
+            setInterval(()=>{sendRequest(method, server + url, headers).then(
+                data => {
+                    let headerMap = headerHandler(data);
+                    let valueStringHeaderMessages = JSON.parse(headerMap['messages']);
+                    this.messages = valueStringHeaderMessages["messages"];
+                    console.log(this.messages);
+                })}, 1500);
 
-        //Ожидание загрузки первых сообщений, пролистывает div вниз
-        setTimeout(()=>{
-            var objDiv = document.getElementById("messages-list");
-            objDiv.scrollTop = objDiv.scrollHeight;
-        }, 2000);
-        } else {
+            //Ожидание загрузки первых сообщений, пролистывает div вниз
+            setTimeout(()=>{
+                var objDiv = document.getElementById("messages-list");
+                objDiv.scrollTop = objDiv.scrollHeight;
+            }, 2000);
+        } 
+        else 
+        {
             alert("Время сесси истекло, пожалуйста авторизируйтесь!")
         }
     },
