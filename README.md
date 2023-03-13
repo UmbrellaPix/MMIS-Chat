@@ -1,8 +1,11 @@
 # test-project
 
-## Project setup
+## Скачать и установить node.js
+
+## Выполнить команду в cmd от имени администратора
+
 ```
-npm install
+npm install -g @vue/cli
 ```
 
 ## Установить библиотеку
